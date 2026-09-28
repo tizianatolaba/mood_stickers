@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mood sticker // Tienda de Stickers Premium</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Premium Glowing Background Gradient -->
+    <div class="bg-glow"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-home-btn">
+                <span>mood</span> sticker
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" id="btn-shop-nav">Tienda</a>
+                <a href="#" class="nav-link" id="btn-legal-nav">Legales</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="nav-action-btn" id="cart-toggle-btn" aria-label="Abrir carrito">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+                <div class="auth-buttons" id="auth-nav-container">
+                    <button class="btn btn-outline" id="btn-login-open">Ingresar</button>
+                    <button class="btn btn-primary" id="btn-register-open">Registrarse</button>
+                </div>
+                <div class="user-menu hidden" id="user-menu-container">
+                    <button class="btn btn-outline" id="btn-profile-open">
+                        <i class="fa-regular fa-user"></i> <span id="user-display-name">Mi Cuenta</span>
+                    </button>
+                    <button class="nav-action-btn" id="btn-logout" title="Cerrar Sesión">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        <!-- 1. Shop View -->
+        <section id="view-shop" class="view">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <span class="hero-tag">COLECCIÓN PREMIUM // 2026</span>
+                    <h1 class="hero-title">STICKERS CON ACTITUD</h1>
+                    <p class="hero-subtitle">Stickers comunes y para termos (PVC) de anime, fútbol, música, artistas y mucho más. Diseños de alta calidad con envíos a toda la Argentina.</p>
+                    <a href="#products-section" class="btn btn-primary btn-large">Explorar Diseños</a>
+                </div>
+                <div class="hero-badge">
+                    <span class="rotating-text">COMPRA SEGURA • DEFENSA DEL CONSUMIDOR • LEY 25.326 •</span>
+                </div>
+            </div>
+
+            <!-- Category Filter Bar -->
+            <div class="filter-bar" id="products-section">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="Anime">Anime</button>
+                <button class="filter-btn" data-category="Fútbol">Fútbol</button>
+                <button class="filter-btn" data-category="Música">Música y Artistas</button>
+                <button class="filter-btn" data-category="Comunes">Comunes</button>
+                <button class="filter-btn" data-category="Termos">Para Termos (PVC)</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="product-grid" id="product-list-container">
+                <!-- Products loaded dynamically via JS -->
+                <div class="loading-spinner">
+                    <i class="fa-solid fa-spinner fa-spin"></i> Cargando productos...
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Legal View (Terms, Privacy Policy) -->
+        <section id="view-legal" class="view hidden">
+            <div class="legal-container">
+                <div class="legal-tabs">
+                    <button class="legal-tab-btn active" data-tab="privacy">Protección de Datos (Ley 25.326)</button>
+                    <button class="legal-tab-btn" data-tab="terms">Términos y Condiciones</button>
+                    <button class="legal-tab-btn" data-tab="arrepentimiento-info">Botón de Arrepentimiento</button>
+                </div>
+                
+                <div class="legal-content-card">
+                    <!-- Tab: Privacy Policy -->
+                    <div class="legal-tab-content" id="tab-privacy">
+                        <h2>Política de Privacidad y Protección de Datos Personales</h2>
+                        <p class="legal-law-badge">Cumplimiento Ley N° 25.326 (Argentina)</p>
+                        <div class="legal-text">
+                            <h3>1. Identificación y Compromiso</h3>
+                            <p>mood sticker se compromete firmemente a proteger la privacidad y los datos personales de sus usuarios. Toda recolección y tratamiento de datos se realiza bajo las normas de la Ley de Protección de Datos Personales N° 25.326 de la República Argentina y sus normas complementarias.</p>
+                            
+                            <h3>2. Recolección de Datos</h3>
+                            <p>Los únicos datos recolectados durante el registro son: Nombre y Apellido, Correo Electrónico y Contraseña (encriptada). Estos datos son imprescindibles para individualizar al comprador, gestionar los pedidos y garantizar la seguridad de su cuenta.</p>
+                            
+                            <h3>3. Finalidad del Tratamiento</h3>
+                            <p>Los datos recopilados tienen como única finalidad procesar los pedidos de compras, emitir facturas, procesar los despachos y proporcionar soporte al cliente. No transferimos ni comercializamos bases de datos personales bajo ninguna circunstancia a terceros.</p>
+                            
+                            <h3>4. Derecho de Acceso, Rectificación y Supresión</h3>
+                            <p>El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses. Asimismo, podrá solicitar en cualquier momento la <strong>rectificación</strong> o <strong>supresión (derecho al olvido)</strong> de sus datos de nuestra base de datos. Para hacer efectivo este derecho de manera inmediata y automatizada, los usuarios logueados pueden presionar el botón <em>"Eliminar mi Cuenta y Datos Personales"</em> desde su perfil de usuario en esta plataforma.</p>
+                            
+                            <h3>5. Órgano de Control</h3>
+                            <p>Se informa que la Agencia de Acceso a la Información Pública (órgano de control de la Ley N° 25.326) tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Terms and Conditions -->
+                    <div class="legal-tab-content hidden" id="tab-terms">
+                        <h2>Términos y Condiciones de Uso</h2>
+                        <p class="legal-law-badge">Defensa del Consumidor - Ley N° 24.240</p>
+                        <div class="legal-text">
+                            <h3>1. Aceptación de los Términos</h3>
+                            <p>Al acceder y utilizar el sitio web de mood sticker, el usuario acepta de manera plena y sin reservas los presentes Términos y Condiciones, los cuales regulan la compraventa de productos ofrecidos en el sitio dentro del territorio de la República Argentina.</p>
+                            
+                            <h3>2. Capacidad para Contratar</h3>
+                            <p>Nuestros productos están dirigidos a un público joven de 15 a 25 años. De conformidad con el Código Civil y Comercial de la Nación, los menores adultos (16 a 18 años) poseen capacidad para realizar actos de la vida cotidiana y compras ordinarias en el ámbito digital con fondos propios o autorización familiar. En caso de requerirse, las operaciones deberán ser ratificadas por sus padres o tutores.</p>
+                            
+                            <h3>3. Precios y Disponibilidad</h3>
+                            <p>Los precios publicados se encuentran expresados en Pesos Argentinos ($) y contienen el Impuesto al Valor Agregado (IVA). Las fotos de los productos son de carácter ilustrativo correspondientes al stock disponible.</p>
+                            
+                            <h3>4. Derecho de Revocación (Botón de Arrepentimiento)</h3>
+                            <p>En estricto cumplimiento de la <strong>Resolución 424/2020 de la Secretaría de Comercio Interior</strong>, el comprador tiene el derecho de revocar la compra efectuada dentro del plazo de <strong>diez (10) días corridos</strong> contados a partir de la fecha de entrega del producto o de la celebración del contrato, lo que ocurra último, sin responsabilidad alguna. Para ejercer este derecho, el usuario dispone del "Botón de Arrepentimiento" visible en el historial de sus compras o perfil.</p>
+                            
+                            <h3>5. Reclamos y Garantías</h3>
+                            <p>Todos los productos nuevos cuentan con una garantía legal mínima de seis (6) meses por defectos de fabricación. Ante cualquier disconformidad o reclamo, los canales de atención están permanentemente a disposición, garantizando una respuesta célere en el marco del Art. 27 de la Ley 24.240 de Defensa del Consumidor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Arrepentimiento Info -->
+                    <div class="legal-tab-content hidden" id="tab-arrepentimiento-info">
+                        <h2>Funcionamiento del Botón de Arrepentimiento</h2>
+                        <p class="legal-law-badge">Resolución 424/2020 SCI</p>
+                        <div class="legal-text">
+                            <p>El <strong>Botón de Arrepentimiento</strong> es un enlace fácil y accesible que permite a los consumidores arrepentirse de una compra online y solicitar la devolución del dinero. Esta opción es legalmente válida para contrataciones realizadas por internet.</p>
+                            <h3>¿Cómo funciona en mood sticker?</h3>
+                            <ol>
+                                <li>Inicia sesión con tu cuenta de usuario.</li>
+                                <li>Ingresa a tu perfil haciendo clic en tu nombre.</li>
+                                <li>Verás el listado de tus compras ordenadas de la más reciente a la más antigua.</li>
+                                <li>Las compras realizadas en los últimos <strong>10 días corridos</strong> tendrán habilitado el botón <strong style="color:var(--accent-red)">"Arrepentirse de esta compra"</strong>.</li>
+                                <li>Al hacer clic, el estado de tu pedido cambiará inmediatamente a <em>"Cancelled/Arrepentido"</em>, y se reintegrarán los productos al stock del inventario automáticamente. Nuestro equipo procesará de forma inmediata el reintegro de tu pago al mismo medio utilizado.</li>
+                            </ol>
+                            <p>Para más información o consultas, podés comunicarte directamente a través de nuestro formulario de contacto o recurrir a la Dirección Nacional de Defensa del Consumidor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Profile / Order View -->
+        <section id="view-profile" class="view hidden">
+            <div class="profile-container">
+                <div class="profile-grid">
+                    <!-- Left column: User info -->
+                    <div class="profile-info-card card">
+                        <div class="profile-header">
+                            <div class="avatar-glow">
+                                <i class="fa-solid fa-user-astronaut"></i>
+                            </div>
+                            <h2 id="profile-name">Cargando...</h2>
+                            <p id="profile-email">Cargando...</p>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Rol del Usuario</span>
+                                <span class="detail-value" id="profile-role">User</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Consentimiento de Datos</span>
+                                <span class="detail-value text-green"><i class="fa-solid fa-circle-check"></i> Brindado (Ley 25.326)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Miembro desde</span>
+                                <span class="detail-value" id="profile-created">--/--/----</span>
+                            </div>
+                        </div>
+
+                        <!-- ARCO / Privacy rights compliance action -->
+                        <div class="profile-actions">
+                            <h3>Gestión de Datos Personales</h3>
+                            <p class="text-muted text-sm">Derecho de Portabilidad (Ley 25.326): Podés exportar una copia completa de tus datos personales, consentimientos y pedidos.</p>
+                            <button class="btn btn-outline btn-full" id="btn-export-data" style="margin-bottom: 14px;">
+                                <i class="fa-solid fa-file-arrow-down"></i> Descargar Mis Datos (.json)
+                            </button>
+                            <p class="text-muted text-sm">Derecho de Supresión (Ley 25.326): Podés eliminar de forma permanente tu cuenta y todos los datos asociados de nuestro sistema.</p>
+                            <button class="btn btn-danger btn-full" id="btn-delete-account">
+                                <i class="fa-solid fa-trash-can"></i> Eliminar mi Cuenta
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right column: Order history -->
+                    <div class="profile-orders-card card">
+                        <h2>Historial de Compras</h2>
+                        <p class="section-subtitle">Las compras con menos de 10 días disponen del Botón de Arrepentimiento para devolución directa.</p>
+                        
+                        <div class="orders-list" id="orders-list-container">
+                            <div class="empty-state">
+                                <i class="fa-solid fa-receipt"></i>
+                                <p>Aún no realizaste ninguna compra.</p>
+                                <button class="btn btn-primary btn-shop-redirect">Ir a la Tienda</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar (Drawer) -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="cart-close-btn" id="cart-close-btn">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items-container">
+            <!-- Items loaded dynamically -->
+            <div class="empty-cart-state">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>El carrito está vacío</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span class="cart-total-price" id="cart-total-price">$0.00</span>
+            </div>
+            
+            <!-- Legal consent at checkout (Ley 25.326 compliance) -->
+            <div class="cart-consent-wrapper">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="cart-data-consent" checked>
+                    <span class="checkmark"></span>
+                    <span class="checkbox-text">Acepto el procesamiento de mis datos personales para gestionar este pedido bajo la <a href="#" id="cart-privacy-link">Política de Privacidad</a>.</span>
+                </label>
+            </div>
+
+            <button class="btn btn-primary btn-full btn-large" id="btn-checkout" disabled>
+                Comprar Ahora (Checkout)
+            </button>
+        </div>
+    </div>
+    <div class="overlay" id="cart-overlay"></div>
+
+    <!-- AUTH MODALS -->
+    <!-- Login Modal -->
+    <div class="modal" id="modal-login">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-login-close">&times;</button>
+            <h2 class="modal-title">Iniciar Sesión</h2>
+            <form id="form-login">
+                <div class="form-group">
+                    <label for="login-email">Correo Electrónico</label>
+                    <input type="email" id="login-email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full btn-large">Ingresar</button>
+            </form>
+            <div class="modal-footer">
+                <p>¿No tenés cuenta? <a href="#" id="link-go-register">Registrate gratis</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="modal-register">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-register-close">&times;</button>
+            <h2 class="modal-title">Registrarse</h2>
+            <form id="form-register">
+                <div class="form-group">
+                    <label for="register-name">Nombre y Apellido</label>
+                    <input type="text" id="register-name" required placeholder="Ej: Sofía Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Correo Electrónico</label>
+                    <input type="email" id="register-email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Contraseña</label>
+                    <input type="password" id="register-password" required placeholder="Mínimo 6 caracteres" minlength="6">
+                </div>
+                
+                <!-- Explicit compliance consent checkbox -->
+                <div class="form-group consent-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="register-data-consent" required>
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">
+                            Doy mi consentimiento para el tratamiento de mis datos personales de conformidad con la 
+                            <a href="#" class="legal-link-inside-form" data-target="privacy">Política de Privacidad (Ley 25.326)</a> y los 
+                            <a href="#" class="legal-link-inside-form" data-target="terms">Términos y Condiciones</a>.
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full btn-large">Crear Cuenta</button>
+            </form>
+            <div class="modal-footer">
+                <p>¿Ya tenés cuenta? <a href="#" id="link-go-login">Iniciá sesión</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONFIRMATION MODALS (For Arrepentimiento & Suppression) -->
+    <!-- Confirm Arrepentimiento Modal -->
+    <div class="modal" id="modal-confirm-arrepentimiento">
+        <div class="modal-content alert-modal">
+            <button class="modal-close" id="modal-arrepentimiento-close">&times;</button>
+            <div class="modal-alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <h2 class="modal-title">¿Arrepentirse de esta compra?</h2>
+            <p>De conformidad con la Res. 424/2020, tenés derecho a revocar la aceptación de tu compra. Al confirmar, el pedido se cancelará inmediatamente y te reintegraremos la totalidad del dinero pagado.</p>
+            <div class="alert-actions">
+                <button class="btn btn-outline" id="btn-arrepentirse-cancel">Cerrar</button>
+                <button class="btn btn-danger" id="btn-arrepentirse-confirm">Confirmar Cancelación</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Account Suppression Modal -->
+    <div class="modal" id="modal-confirm-delete">
+        <div class="modal-content alert-modal">
+            <button class="modal-close" id="modal-delete-close">&times;</button>
+            <div class="modal-alert-icon danger-icon"><i class="fa-solid fa-user-slash"></i></div>
+            <h2 class="modal-title">¿Eliminar tus datos y cuenta?</h2>
+            <p><strong>Atención:</strong> Esta acción es irreversible en los términos de la Ley 25.326. Tu cuenta, historial de compras y todos tus datos personales asociados se borrarán de forma definitiva y permanente de nuestros servidores.</p>
+            <div class="alert-actions">
+                <button class="btn btn-outline" id="btn-delete-cancel">Cerrar</button>
+                <button class="btn btn-danger" id="btn-delete-confirm">Eliminar Permanentemente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Page Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="nav-logo"><span>mood</span> sticker</span>
+                <p>El sticker que va con tu mood, con la seguridad que necesitás.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <a href="#" id="footer-btn-shop">Tienda</a>
+                <a href="#" id="footer-btn-legal">Legales y Políticas</a>
+            </div>
+
+            <div class="footer-legal">
+                <h4>Cumplimiento Legal Arg.</h4>
+                <a href="#" id="footer-btn-privacy">Protección de Datos (Ley 25.326)</a>
+                <a href="#" id="footer-btn-terms">Términos y Condiciones</a>
+                <a href="#" id="footer-btn-arrepentimiento">Botón de Arrepentimiento</a>
+                
+                <!-- Defensa del Consumidor Official Links -->
+                <div class="defensa-consumidor-section">
+                    <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" class="defensa-link" rel="noopener noreferrer">
+                        <i class="fa-solid fa-scale-balanced"></i> Defensa del Consumidor
+                    </a>
+                    <p class="defensa-subtext">Por reclamos o consultas ingresá al portal oficial.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 mood sticker. Todos los derechos reservados. Desarrollado con FastAPI y SQLite.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic JS -->
+    <script src="app.js"></script>
+</body>
+</html>

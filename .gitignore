@@ -1,0 +1,27 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python / Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database
+*.db
+*.sqlite3
+
+# Node / Dependencies
+node_modules/
+tienda/node_modules/
+dist/
+tienda/dist/
+
+# Scratch / Temp
+scratch/
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
